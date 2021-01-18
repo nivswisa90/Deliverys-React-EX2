@@ -3,11 +3,21 @@ import ReactDOM from 'react-dom';
 import './index.css';
 // import App from './App';
 import DeliveriesList from "./Components/DeliveriesList";
+import Layout from './Components/Layout';
+import Delivery from './Components/Delivery';
+import SaveDeliveryForm from './Components/SaveDeliveryForm'
+import Truck from './Components/Truck';
+
 import reportWebVitals from './reportWebVitals';
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <DeliveriesList />
+    {/* <Delivery/> */}
+    <Layout />
+    {/* <DeliveriesList/> */}
+    {/* <SaveDeliveryForm/> */}
+    {/* <Truck/> */}
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -1,5 +1,5 @@
 [
-    {"id":1 , "date":"05.01.20201","city":"Tel Aviv" },
-    {"id":2 , "date":"07.01.20201","city":"Haifa" },
-    {"id":3 , "date":"15.01.20201","city":"Jerusalem" }
+    {"id":1 , "date":"05.01.20201","name":"Ehud","city":"Tel Aviv" },
+    {"id":2 , "date":"07.01.20201","name":"Ema","city":"Haifa" },
+    {"id":3 , "date":"15.01.20201","name":"Eira","city":"Jerusalem" }
 ]
