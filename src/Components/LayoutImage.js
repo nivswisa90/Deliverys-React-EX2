@@ -4,21 +4,29 @@ import deliveriesData from "../Data/deliveries.json";
 import DeliveriesList from "./DeliveriesList";
 import DeliveryForm from "./DeliveryForm";
 
+
 const LayoutImage = () => {
-  const [delivery, setDelivery] = useState(deliveriesData);
+  const [deliveryInfo,setDeliveryInfo] = useState('');
+  const [deliveries, setDelivery] = useState(deliveriesData);
 
   const deleteDelivery = (id) => {
-    setDelivery(delivery.filter((delivery) => delivery.id !== id));
+    setDelivery(deliveries.filter((delivery) => delivery.id !== id));
   };
 
   const addDelivery = (nextId, date, name, city) => {
-    let id = nextId(delivery);
-    setDelivery([...delivery, { id: id, date: date, name: name, city: city }]);
+    let id = nextId(deliveries);
+    setDelivery([...deliveries, { id: id, date: date, name: name, city: city }]);
   };
 
-  const updateDelivery = (id) => {
-    
-  }
+  const getDeliveryInfo = (delivery) => {
+    setDeliveryInfo(delivery);
+  };
+
+  const updateDelivery = (deliveryInfo,id) => {
+    console.log(deliveryInfo);
+    console.log(id);
+    setDelivery(deliveries.map((item) => item.id === id ? deliveryInfo : item));
+  };
 
   const nextId = (delivery) => {
     let max = delivery.reduce(
@@ -33,11 +41,11 @@ const LayoutImage = () => {
       <img
         src={backgroundImage}
         alt="backgroundImage"
-        style={{ width: 1285, height: 800 }}
+        style={{ width: 1285, height: 800,position:"relative" }}
       />
-      <DeliveriesList deliveryInfo={delivery} deleteDelivery={deleteDelivery} />
-      <DeliveryForm addDelivery={addDelivery} nextId={nextId} />
-      {/* <div>{this.props.children}</div> */}
+      <DeliveriesList deliveryInfo={deliveries} deleteDelivery={deleteDelivery} getDeliveryInfo={getDeliveryInfo} />
+      <DeliveryForm addDelivery={addDelivery} nextId={nextId} deliveryInfo={deliveryInfo} updateDelivery={updateDelivery}/>
+
     </div>
   );
 };

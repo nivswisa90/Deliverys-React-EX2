@@ -23,16 +23,31 @@ const style = {
     fontWeight: "bold",
   },
 };
-const DeliveryForm = ({ deliveryInfo, addDelivery, nextId }) => {
+const DeliveryForm = ({  addDelivery, nextId, deliveryInfo, updateDelivery }) => {
   const [date, setDate] = useState("");
   const [name, setName] = useState("");
   const [city, setCity] = useState("");
 
+  let save = "Save";
+  let update = "Update";
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    addDelivery(nextId, date, name, city);
+    if(deliveryInfo == null){
+      addDelivery(nextId, date, name, city);
+    }
+    if(date !== ""){
+      console.log("data is null");
+      deliveryInfo.date = date;
+    }
+    if(name !== ""){
+      deliveryInfo.name = name;
+    }
+    if(city !== ""){
+      deliveryInfo.city = city;
+    }
+    updateDelivery(deliveryInfo,deliveryInfo.id);
   };
-
   return (
     <div className="deliveryForm">
       <form style={{ position: "absolute", left: "813px", top: "45px" }}>
@@ -40,7 +55,8 @@ const DeliveryForm = ({ deliveryInfo, addDelivery, nextId }) => {
           type="text"
           style={style.input}
           placeholder="01.01.2021"
-          value={date}
+          defaultValue={deliveryInfo ? deliveryInfo.date :date}
+          // value={date}
           required
           onChange={(e) => setDate(e.target.value)}
         />
@@ -48,7 +64,7 @@ const DeliveryForm = ({ deliveryInfo, addDelivery, nextId }) => {
           type="text"
           style={style.input}
           placeholder="John Doe"
-          value={name}
+          defaultValue={deliveryInfo ? deliveryInfo.name :name}
           required
           onChange={(e) => setName(e.target.value)}
         />
@@ -56,7 +72,7 @@ const DeliveryForm = ({ deliveryInfo, addDelivery, nextId }) => {
           type="text"
           style={style.input}
           placeholder="Tel Aviv"
-          value={city}
+          defaultValue={deliveryInfo ? deliveryInfo.city :city}
           required
           onChange={(e) => setCity(e.target.value)}
         />
@@ -67,7 +83,7 @@ const DeliveryForm = ({ deliveryInfo, addDelivery, nextId }) => {
           color="secondary"
           onClick={handleSubmit}
         >
-          Save
+          {deliveryInfo === "" ? save : update}
         </Button>
       </form>
     </div>

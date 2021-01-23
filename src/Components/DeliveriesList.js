@@ -5,7 +5,7 @@ import EditIcon from "@material-ui/icons/Edit";
 import DeleteIcon from "@material-ui/icons/Delete";
 import "./DeliveriesList.css";
 
-const DeliveryList = ({ deliveryInfo, deleteDelivery, addDelivery }) => {
+const DeliveryList = ({ deliveryInfo, deleteDelivery, addDelivery, getDeliveryInfo }) => {
   
   const eachDelivery = (deliveryInfo, i) => {
     return (
@@ -31,7 +31,7 @@ const DeliveryList = ({ deliveryInfo, deleteDelivery, addDelivery }) => {
             size="small"
             color="secondary"
             aria-label="edit"
-            // onClick={() => editDelivery(deliveryInfo[i].id,)}
+            onClick={() => getDeliveryInfo(deliveryInfo[i])}
             variant="round"
           >
             <EditIcon />
