@@ -6,13 +6,21 @@ const style = {
     marginLeft: "30%",
     width: 158,
     height: 60,
+    fontSize: 16,
+    fontFamily: "Rubik",
+    fontWeight: "bold",
+    backgroundColor:"#EE4D47"
   },
   input: {
+    padding: 18,
     display: "block",
     marginBottom: "1%",
     width: 400,
     height: 60,
     borderRadius: 3,
+    fontSize: 18,
+    fontFamily: "Rubik",
+    fontWeight: "bold",
   },
 };
 const DeliveryForm = ({ deliveryInfo, addDelivery, nextId }) => {
@@ -22,11 +30,11 @@ const DeliveryForm = ({ deliveryInfo, addDelivery, nextId }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    addDelivery(nextId,date, name, city);
+    addDelivery(nextId, date, name, city);
   };
 
   return (
-    <div className="deliveryForm" >
+    <div className="deliveryForm">
       <form style={{ position: "absolute", left: "813px", top: "45px" }}>
         <input
           type="text"
