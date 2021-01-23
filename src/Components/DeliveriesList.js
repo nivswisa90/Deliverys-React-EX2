@@ -27,7 +27,7 @@ const DeliveryList = ({ deliveryInfo, deleteDelivery, addDelivery, getDeliveryIn
           }}
         >
           <Fab
-            style={{ height: "32px", width: "32px" }}
+            style={{ height: "32px", width: "32px",backgroundColor: "#EE4D47" }}
             size="small"
             color="secondary"
             aria-label="edit"
@@ -37,7 +37,7 @@ const DeliveryList = ({ deliveryInfo, deleteDelivery, addDelivery, getDeliveryIn
             <EditIcon />
           </Fab>
           <Fab
-            style={{ height: "32px", width: "32px" }}
+            style={{ height: "32px", width: "32px", backgroundColor: "#EE4D47" }}
             size="small"
             color="secondary"
             aria-label="Delete"

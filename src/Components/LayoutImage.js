@@ -4,9 +4,8 @@ import deliveriesData from "../Data/deliveries.json";
 import DeliveriesList from "./DeliveriesList";
 import DeliveryForm from "./DeliveryForm";
 
-
 const LayoutImage = () => {
-  const [deliveryInfo,setDeliveryInfo] = useState('');
+  const [deliveryInfo, setDeliveryInfo] = useState("");
   const [deliveries, setDelivery] = useState(deliveriesData);
 
   const deleteDelivery = (id) => {
@@ -15,17 +14,22 @@ const LayoutImage = () => {
 
   const addDelivery = (nextId, date, name, city) => {
     let id = nextId(deliveries);
-    setDelivery([...deliveries, { id: id, date: date, name: name, city: city }]);
+    setDelivery([
+      ...deliveries,
+      { id: id, date: date, name: name, city: city },
+    ]);
   };
 
   const getDeliveryInfo = (delivery) => {
     setDeliveryInfo(delivery);
   };
 
-  const updateDelivery = (deliveryInfo,id) => {
+  const updateDelivery = (deliveryInfo, id) => {
     console.log(deliveryInfo);
     console.log(id);
-    setDelivery(deliveries.map((item) => item.id === id ? deliveryInfo : item));
+    setDelivery(
+      deliveries.map((item) => (item.id === id ? deliveryInfo : item))
+    );
   };
 
   const nextId = (delivery) => {
@@ -41,11 +45,19 @@ const LayoutImage = () => {
       <img
         src={backgroundImage}
         alt="backgroundImage"
-        style={{ width: 1285, height: 800,position:"relative" }}
+        style={{ width: 1285, height: 800, position: "relative" }}
       />
-      <DeliveriesList deliveryInfo={deliveries} deleteDelivery={deleteDelivery} getDeliveryInfo={getDeliveryInfo} />
-      <DeliveryForm addDelivery={addDelivery} nextId={nextId} deliveryInfo={deliveryInfo} updateDelivery={updateDelivery}/>
-
+      <DeliveriesList
+        deliveryInfo={deliveries}
+        deleteDelivery={deleteDelivery}
+        getDeliveryInfo={getDeliveryInfo}
+      />
+      <DeliveryForm
+        addDelivery={addDelivery}
+        nextId={nextId}
+        deliveryInfo={deliveryInfo}
+        updateDelivery={updateDelivery}
+      />
     </div>
   );
 };

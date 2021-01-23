@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState} from "react";
 import Button from "@material-ui/core/Button";
 
 const style = {
@@ -54,6 +54,7 @@ const DeliveryForm = ({
       deliveryInfo = "";
     }
   };
+
   return (
     <div className="deliveryForm">
       <form style={{ position: "absolute", left: "813px", top: "45px" }}>
