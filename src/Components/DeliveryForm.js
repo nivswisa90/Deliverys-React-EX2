@@ -9,7 +9,7 @@ const style = {
     fontSize: 16,
     fontFamily: "Rubik",
     fontWeight: "bold",
-    backgroundColor:"#EE4D47"
+    backgroundColor: "#EE4D47",
   },
   input: {
     padding: 18,
@@ -23,7 +23,12 @@ const style = {
     fontWeight: "bold",
   },
 };
-const DeliveryForm = ({  addDelivery, nextId, deliveryInfo, updateDelivery }) => {
+const DeliveryForm = ({
+  addDelivery,
+  nextId,
+  deliveryInfo,
+  updateDelivery,
+}) => {
   const [date, setDate] = useState("");
   const [name, setName] = useState("");
   const [city, setCity] = useState("");
@@ -33,20 +38,20 @@ const DeliveryForm = ({  addDelivery, nextId, deliveryInfo, updateDelivery }) =>
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if(deliveryInfo == null){
+    if (deliveryInfo === "") {
       addDelivery(nextId, date, name, city);
+    } else {
+      if (date !== "") {
+        deliveryInfo.date = date;
+      }
+      if (name !== "") {
+        deliveryInfo.name = name;
+      }
+      if (city !== "") {
+        deliveryInfo.city = city;
+      }
+      updateDelivery(deliveryInfo, deliveryInfo.id);
     }
-    if(date !== ""){
-      console.log("data is null");
-      deliveryInfo.date = date;
-    }
-    if(name !== ""){
-      deliveryInfo.name = name;
-    }
-    if(city !== ""){
-      deliveryInfo.city = city;
-    }
-    updateDelivery(deliveryInfo,deliveryInfo.id);
   };
   return (
     <div className="deliveryForm">
@@ -55,7 +60,7 @@ const DeliveryForm = ({  addDelivery, nextId, deliveryInfo, updateDelivery }) =>
           type="text"
           style={style.input}
           placeholder="01.01.2021"
-          defaultValue={deliveryInfo ? deliveryInfo.date :date}
+          defaultValue={deliveryInfo ? deliveryInfo.date : date}
           // value={date}
           required
           onChange={(e) => setDate(e.target.value)}
@@ -64,7 +69,7 @@ const DeliveryForm = ({  addDelivery, nextId, deliveryInfo, updateDelivery }) =>
           type="text"
           style={style.input}
           placeholder="John Doe"
-          defaultValue={deliveryInfo ? deliveryInfo.name :name}
+          defaultValue={deliveryInfo ? deliveryInfo.name : name}
           required
           onChange={(e) => setName(e.target.value)}
         />
@@ -72,7 +77,7 @@ const DeliveryForm = ({  addDelivery, nextId, deliveryInfo, updateDelivery }) =>
           type="text"
           style={style.input}
           placeholder="Tel Aviv"
-          defaultValue={deliveryInfo ? deliveryInfo.city :city}
+          defaultValue={deliveryInfo ? deliveryInfo.city : city}
           required
           onChange={(e) => setCity(e.target.value)}
         />
