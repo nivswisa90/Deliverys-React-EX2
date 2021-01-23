@@ -51,6 +51,7 @@ const DeliveryForm = ({
         deliveryInfo.city = city;
       }
       updateDelivery(deliveryInfo, deliveryInfo.id);
+      deliveryInfo = "";
     }
   };
   return (

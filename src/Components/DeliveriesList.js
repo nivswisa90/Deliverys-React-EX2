@@ -11,16 +11,16 @@ const DeliveryList = ({ deliveryInfo, deleteDelivery, addDelivery, getDeliveryIn
     return (
       <div className="row">
         <span style={{ marginLeft: "24px" }}>
-          <p style={{ marginLeft: "13px", width: "24px", height: "38px" }}>
+          <p style={{ marginLeft: "3px", width: "24px", height: "38px" }}>
             {i + 1}
           </p>
           <p>{deliveryInfo[i].date}</p>
           <p>{deliveryInfo[i].name}</p>
           <p>{deliveryInfo[i].city}</p>
         </span>
-        <div
+        <div className="buttons"
           style={{
-            marginLeft: "23px",
+            marginLeft: "58px",
             display: "inline",
             width: "83px",
             height: "36px",
