@@ -1,19 +1,19 @@
 * {
-    margin: 0;
-    padding: 0;
-  }
-
-.deliverieslist{
-  width: 514px;
-  height: 38px;
-  /* margin-top:22px; */
+  margin: 0;
+  padding: 0;
 }
-.deliverieslist p {
-  display: inline-block;
-  width: 92px;
-  height: 38px;
-  margin-left: 30px;
-  font-weight: 300;
-  font-family: "Rubik";
-  font-size: 18px;
+
+.row{
+width: 514px;
+height: 38px;
+margin-top:22px;
+}
+.row p {
+display: inline-block;
+width: 92px;
+height: 38px;
+margin-left: 30px;
+font-weight: 300;
+font-family: "Rubik";
+font-size: 18px;
 }
