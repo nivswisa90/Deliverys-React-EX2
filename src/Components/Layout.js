@@ -1,38 +1,35 @@
-import React, { Component } from "react";
+import React ,{ useState} from 'react';
 import backgroundImage from "../images/Scene.png";
-import DeliveriesList from "./DeliveriesList";
-import SaveDeliveryForm from "./SaveDeliveryForm";
-import Truck from "./Truck";
-// import {MdDelete, MdEdit,MdSave} from 'react-icons/md';
+import deliveriesData from "../Data/deliveriesInfo.json";
+import DeliveriesList from './DeliveriesList';
+import DeliveryForm from './DeliveryForm';
 
-class Layout extends Component {
-  // constructor(props){
-  //     super(props);
 
-  // this.state = {
-  //     editing: false,
-  // };
-  // this.edit = this.edit.bind(this);
-  // this.save = this.save.bind(this);
-  // this.delete = this.delete.bind(this);
+const LayoutImage = () => {
+    const [delivery, setDelivery] = useState(deliveriesData);
 
-  // this.renderUI = this.renderUI.bind(this);
-  // this.renderForm = this.renderForm.bind(this);
-  // }
-  render() {
+    const deleteDelivery = (id) => {
+      setDelivery(delivery.filter((delivery) => delivery.id !== id));
+    }
+
+    const addDelivery = (date,name,city) => {
+      setDelivery([...delivery, {id:9,date:date,name:name,city:city}]);
+    }
+
     return (
-      <div id="backgroundimage">
-        <img
-          src={backgroundImage}
-          alt="backgroundImage"
-          style={{ width: 1285, height: 800 }}
-        />
-        <DeliveriesList />
-        <SaveDeliveryForm />
-        {/* <div>{this.props.children}</div> */}
-      </div>
-    );
-  }
+        <div id="backgroundimage">
+          <img
+            src={backgroundImage}
+            alt="backgroundImage"
+            style={{ width: 1285, height: 800 }}
+          />
+          <DeliveriesList deliveryInfo={delivery} deleteDelivery={deleteDelivery}  />
+          <DeliveryForm addDelivery={addDelivery}/>
+          {/* <div>{this.props.children}</div> */}
+        </div>
+    )
 }
 
-export default Layout;
+export default LayoutImage;
+
+
