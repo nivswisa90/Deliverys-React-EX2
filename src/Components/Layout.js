@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import backgroundImage from '../images/Scene.png';
-import DeliveriesList from './DeliveriesList';
-import SaveDeliveryForm from './SaveDeliveryForm';
-import Truck from './Truck';
+import backgroundImage from "../images/Scene.png";
+import DeliveriesList from "./DeliveriesList";
+import SaveDeliveryForm from "./SaveDeliveryForm";
+import Truck from "./Truck";
 // import {MdDelete, MdEdit,MdSave} from 'react-icons/md';
 
 class Layout extends Component {
@@ -21,20 +21,18 @@ class Layout extends Component {
   // }
   render() {
     return (
-      <div id="backgroundimage" >
-        <img src={backgroundImage} alt="backgroundImage" style={{ width:1285, height:800}}/>
-        <DeliveriesList/>
-        <SaveDeliveryForm/>
-        <Truck/>
+      <div id="backgroundimage">
+        <img
+          src={backgroundImage}
+          alt="backgroundImage"
+          style={{ width: 1285, height: 800 }}
+        />
+        <DeliveriesList />
+        <SaveDeliveryForm />
         {/* <div>{this.props.children}</div> */}
       </div>
     );
   }
-  // edit() {
-  //     this.setState({
-  //       editing: true,
-  //     });
-  //   }
 }
 
 export default Layout;

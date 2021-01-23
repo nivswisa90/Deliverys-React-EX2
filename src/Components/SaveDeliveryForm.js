@@ -1,98 +1,51 @@
-import React, { Component } from "react";
-// import {MdDelete, MdEdit,MdSave} from 'react-icons/md';
+import React, { useState } from "react";
 import Button from "@material-ui/core/Button";
-class Layout extends Component {
-  constructor(props) {
-    super(props);
 
-    this.state = {
-      editing: false,
-    };
-    this.edit = this.edit.bind(this);
-    this.save = this.save.bind(this);
-    this.delete = this.delete.bind(this);
-    this.inputChanged = this.inputChanged.bind(this);
-  }
-  edit() {
-    this.setState({
-      editing: true,
-    });
-  }
 
-  delete() {
-    this.props.onDelete(this.props.index);
-  }
-
-  save(e) {
-    e.preventDefault();
-
-    this.props.onChange(this.newDelivery.value, this.props.index);
-
-    this.setState({
-      editing: false,
-    });
-  }
-
-  inputChanged({ target: { value: text } }) {
-    this.setState({
-      newDelivery: text,
-    });
-  }
-  button = {
+const style = {
+  button: {
     marginLeft: "30%",
-    width: "158px",
-    height: "60px",
-  };
-  textarea = {
+    width: 158,
+    height: 60,
+  },
+  input: {
     display: "block",
     marginBottom: "1%",
-    width: "400px",
-    height: "60px",
-    borderRadius: "5px",
+    width: 400,
+    height: 60,
+    borderRadius: 3,
+  },
+};
+const DeliveryForm = (deliveryInfo, addDelivery) => {
+ 
+  const [date, setDate] = useState('');
+  const [name, setName] = useState('');
+  const [city, setCity] = useState('');
 
-  };
-  render() {
-    return (
-      <div className="deliveryForm">
-        <form style={{ position: "absolute", left: "704px", top: "45px" }}>
-          {/* <textarea ref={(input) => (this.newIdea = input)} /> */}
-          {/* <textarea onChange={this.inputChanged} value={this.state.newIdea}/> */}
-          <textarea
-            onChange={this.inputChanged}
-            value={this.state.newDelivery}
-            style={this.textarea}
-            placeholder="01.01.2021"
-          />
-          <textarea
-            onChange={this.inputChanged}
-            value={this.state.newDelivery}
-            style={this.textarea}
-            placeholder="John Doe"
-          />
-          <textarea
-            onChange={this.inputChanged}
-            value={this.state.newDelivery}
-            style={this.textarea}
-            placeholder="Tel Aviv"
-          />
-          {/* onClick={this.save} */}
-          <Button
-            onClick={this.save}
-            style={this.button}
-            variant="contained"
-            color="secondary"
-          >
-            Save
-          </Button>
-        </form>
-      </div>
-    );
+  const handleSubmit = (e) => {
+    // e.preventDefault();
+    addDelivery(date,name,city)
+    console.log(date);
   }
-  // edit() {
-  //     this.setState({
-  //       editing: true,
-  //     });
-  //   }
-}
 
-export default Layout;
+  return (
+    <div className="deliveryForm">
+      <form style={{ position: "absolute", left: "813px", top: "45px" }} >
+        <input type="text" style={style.input} placeholder="01.01.2021" value={date} required onChange={(e) => setDate(e.target.value)} />
+        <input type="text" style={style.input} placeholder="John Doe"  value={name} required onChange={(e) => setName(e.target.value)}/>
+        <input type="text" style={style.input} placeholder="Tel Aviv" value={city} required onChange={(e) => setCity(e.target.value)} />
+        <Button
+          value="addDelivery"
+          style={style.button}
+          variant="contained"
+          color="secondary"
+          onClick={() => handleSubmit()}
+        >
+          Save
+        </Button>
+      </form>
+    </div>
+  );
+};
+
+export default DeliveryForm;

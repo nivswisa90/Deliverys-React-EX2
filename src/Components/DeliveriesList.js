@@ -6,7 +6,7 @@ import Delivery from "../Components/Delivery";
 import { Fab } from "@material-ui/core";
 import EditIcon from "@material-ui/icons/Edit";
 import DeleteIcon from "@material-ui/icons/Delete";
-
+// import Container from "@material-ui/core/Container";
 
 class DeliveriesList extends Component {
   constructor(props) {
@@ -45,12 +45,10 @@ class DeliveriesList extends Component {
   }
 
   delete(id) {
-    console.log("hihi deleretee");
     //Returns an array that will remove the item where is true
     this.setState((prevState) => ({
       deliveries: prevState.deliveries.filter((delivery) => delivery.id !== id),
     }));
-    console.log("gigig")
   }
 
   update(newDelivery, i) {
@@ -89,16 +87,26 @@ class DeliveriesList extends Component {
         onChange={this.update}
         onDelete={this.delete}
       >
+        {/* <Container maxWidth="sm"> */}
         <div className="deliverieslist">
-          <span style={{ marginLeft: "24px"}}>
-            <p style={{ marginLeft: "13px" }}>{i+1}</p>
+          <span style={{ marginLeft: "24px" }}>
+            <p style={{ marginLeft: "13px", width: "24px", height: "38px" }}>
+              {i + 1}
+            </p>
             <p>{item.date}</p>
             <p>{item.name}</p>
             <p>{item.city}</p>
           </span>
-          <p style={{ marginLeft: "58px", display: "inline" }}>
+          <div
+            style={{
+              marginLeft:"58px",
+              display: "inline",
+              width: "83px",
+              height: "36px",
+            }}
+          >
             <Fab
-              style={{ marginRight: "13px", height: "32px", width: "32px" }}
+              style={{height: "32px", width: "32px" }}
               size="small"
               color="secondary"
               aria-label="edit"
@@ -108,7 +116,7 @@ class DeliveriesList extends Component {
               <EditIcon />
             </Fab>
             <Fab
-              style={{ marginRight: "13px", height: "32px", width: "32px" }}
+              style={{ height: "32px", width: "32px" }}
               size="small"
               color="secondary"
               aria-label="Delete"
@@ -117,8 +125,9 @@ class DeliveriesList extends Component {
             >
               <DeleteIcon />
             </Fab>
-          </p>
+          </div>
         </div>
+        {/* </Container> */}
       </Delivery>
     );
   }
@@ -133,9 +142,9 @@ class DeliveriesList extends Component {
           width: "550px",
           height: "594px",
           position: "absolute",
-          left: "7%",
-          top: '5%',
-          background:'white',
+          left: "16%",
+          top: "5%",
+          background: "white",
         }}
       >
         {this.state.deliveries.map(this.eachDelivery)}

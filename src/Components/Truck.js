@@ -20,7 +20,7 @@ class Layout extends Component {
   render() {
     return (
       <div id="truckImage" >
-        <img src={truck} alt="backgroundImage" style={{ position:"absolute", width:811, height:394.55,left:"0%", right:"49.44%", top:"65.38%"}}/>
+        <img src={truck} alt="backgroundImage" style={{ position:"absolute", width:811, height:394.55,left:"-18%", right:"30%", top:"81%"}}/>
         {/* <div>{this.props.children}</div> */}
       </div>
     );
