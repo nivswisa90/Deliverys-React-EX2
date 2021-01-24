@@ -1,12 +1,10 @@
 import React from "react";
-// import Delivery from "./Delivery";
 import { Fab } from "@material-ui/core";
 import EditIcon from "@material-ui/icons/Edit";
 import DeleteIcon from "@material-ui/icons/Delete";
 import "./DeliveriesList.css";
 
-const DeliveryList = ({ deliveryInfo, deleteDelivery, addDelivery, getDeliveryInfo }) => {
-  
+const DeliveryList = ({ deliveryInfo, deleteDelivery, getDeliveryInfo }) => {
   const eachDelivery = (deliveryInfo, i) => {
     return (
       <div className="row">
@@ -18,16 +16,21 @@ const DeliveryList = ({ deliveryInfo, deleteDelivery, addDelivery, getDeliveryIn
           <p>{deliveryInfo[i].name}</p>
           <p>{deliveryInfo[i].city}</p>
         </span>
-        <div className="buttons"
+        <div
+          className="buttons"
           style={{
-            marginLeft: "58px",
+            marginLeft: "17%",
             display: "inline",
             width: "83px",
             height: "36px",
           }}
         >
           <Fab
-            style={{ height: "32px", width: "32px",backgroundColor: "#EE4D47" }}
+            style={{
+              height: "32px",
+              width: "32px",
+              backgroundColor: "#EE4D47",
+            }}
             size="small"
             color="secondary"
             aria-label="edit"
@@ -37,7 +40,11 @@ const DeliveryList = ({ deliveryInfo, deleteDelivery, addDelivery, getDeliveryIn
             <EditIcon />
           </Fab>
           <Fab
-            style={{ height: "32px", width: "32px", backgroundColor: "#EE4D47" }}
+            style={{
+              height: "32px",
+              width: "32px",
+              backgroundColor: "#EE4D47",
+            }}
             size="small"
             color="secondary"
             aria-label="Delete"
@@ -56,8 +63,8 @@ const DeliveryList = ({ deliveryInfo, deleteDelivery, addDelivery, getDeliveryIn
       style={{
         border: "1px solid",
         borderRadius: "10px",
-        width: "550px",
-        height: "594px",
+        width: "37%",
+        height: "70%",
         position: "absolute",
         left: "16%",
         top: "5%",

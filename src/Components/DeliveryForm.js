@@ -14,9 +14,8 @@ const style = {
   input: {
     padding: 18,
     display: "block",
-    marginBottom: "1%",
-    width: 400,
-    height: 60,
+    marginBottom: "5%",
+    width: "130%",
     borderRadius: 3,
     fontSize: 18,
     fontFamily: "Rubik",
@@ -43,7 +42,6 @@ const DeliveryForm = ({
     } else {
       updateDetails();
       updateDelivery(deliveryInfo, deliveryInfo.id);
-      
     }
   };
 
@@ -61,7 +59,7 @@ const DeliveryForm = ({
 
   return (
     <div className="deliveryForm">
-      <form style={{ position: "absolute", left: "813px", top: "45px" }}>
+      <form style={{ position: "absolute", left: "56%", top: "5%" }}>
         <input
           type="text"
           style={style.input}

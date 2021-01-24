@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import backgroundImage from "../images/Scene.png";
 import deliveriesData from "../Data/deliveries.json";
 import DeliveriesList from "./DeliveriesList";
@@ -44,7 +44,7 @@ const LayoutImage = () => {
       <img
         src={backgroundImage}
         alt="backgroundImage"
-        style={{ width: 1285, height: 800, position: "relative" }}
+        style={{ width:"80%", height: "70%", position: "relative" }}
       />
       <DeliveriesList
         deliveryInfo={deliveries}
