@@ -8,11 +8,7 @@ import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    {/* <Delivery/> */}
     <Layout />
-    {/* <Truck/> */}
-    {/* <DeliveriesList/> */}
-    {/* <SaveDeliveryForm/> */}
     <Truck/>
   </React.StrictMode>,
   document.getElementById('root')

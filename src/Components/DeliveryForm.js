@@ -46,7 +46,7 @@ const DeliveryForm = ({
       
     }
   };
-  
+
   const updateDetails = () => {
     if (date !== "") {
       deliveryInfo.date = date;

@@ -28,6 +28,7 @@ const LayoutImage = () => {
     setDelivery(
       deliveries.map((item) => (item.id === id ? deliveryInfo : item))
     );
+    setDeliveryInfo("");
   };
 
   const nextId = (delivery) => {
