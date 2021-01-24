@@ -59,7 +59,7 @@ const DeliveryForm = ({
 
   return (
     <div className="deliveryForm">
-      <form style={{ position: "absolute", left: "56%", top: "5%" }}>
+      <form style={{ position: "absolute", left: "50%", top: "5%" }}>
         <input
           type="text"
           style={style.input}

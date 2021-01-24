@@ -4,7 +4,11 @@ import EditIcon from "@material-ui/icons/Edit";
 import DeleteIcon from "@material-ui/icons/Delete";
 import "./DeliveriesList.css";
 
-const DeliveryList = ({ deliveryInfo, deleteDelivery, getDeliveryInfo }) => {
+const DeliveryList = ({
+  deliveryInfo,
+  deleteDelivery,
+  getDeliveryInfo,
+}) => {
   const eachDelivery = (deliveryInfo, i) => {
     return (
       <div className="row">
@@ -19,7 +23,7 @@ const DeliveryList = ({ deliveryInfo, deleteDelivery, getDeliveryInfo }) => {
         <div
           className="buttons"
           style={{
-            marginLeft: "17%",
+            marginLeft: "11%",
             display: "inline",
             width: "83px",
             height: "36px",
@@ -66,7 +70,7 @@ const DeliveryList = ({ deliveryInfo, deleteDelivery, getDeliveryInfo }) => {
         width: "37%",
         height: "70%",
         position: "absolute",
-        left: "16%",
+        left: "10%",
         top: "5%",
         background: "white",
       }}
