@@ -41,17 +41,21 @@ const DeliveryForm = ({
     if (deliveryInfo === "") {
       addDelivery(nextId, date, name, city);
     } else {
-      if (date !== "") {
-        deliveryInfo.date = date;
-      }
-      if (name !== "") {
-        deliveryInfo.name = name;
-      }
-      if (city !== "") {
-        deliveryInfo.city = city;
-      }
+      updateDetails();
       updateDelivery(deliveryInfo, deliveryInfo.id);
-      deliveryInfo = "";
+      
+    }
+  };
+  
+  const updateDetails = () => {
+    if (date !== "") {
+      deliveryInfo.date = date;
+    }
+    if (name !== "") {
+      deliveryInfo.name = name;
+    }
+    if (city !== "") {
+      deliveryInfo.city = city;
     }
   };
 

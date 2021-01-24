@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import backgroundImage from "../images/Scene.png";
 import deliveriesData from "../Data/deliveries.json";
 import DeliveriesList from "./DeliveriesList";
@@ -25,8 +25,6 @@ const LayoutImage = () => {
   };
 
   const updateDelivery = (deliveryInfo, id) => {
-    console.log(deliveryInfo);
-    console.log(id);
     setDelivery(
       deliveries.map((item) => (item.id === id ? deliveryInfo : item))
     );
